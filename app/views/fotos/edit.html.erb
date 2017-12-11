@@ -1,0 +1,11 @@
+<h2>Update Foto</h2>
+
+<%= form_for @foto do |form| %>
+
+  <%= label_tag :name %>
+
+  <b><%= @foto.name %></b>
+
+  <br>
+  <%= submit_tag 'Update monster!' %>
+<% end %>

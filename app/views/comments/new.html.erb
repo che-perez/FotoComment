@@ -1,0 +1,11 @@
+<h2>Add Comment</h2>
+
+<%= form_for [@foto, @comment] do |form| %>
+<label>
+	Comment:
+  <%= form.text_field :comment, placeholder: 'Comment' %>
+</label>
+   <%= submit_tag 'Comment!' %>
+<% end %>
+
+<%= link_to 'Foto', foto_path(@foto) %>

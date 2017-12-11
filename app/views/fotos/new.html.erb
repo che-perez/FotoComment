@@ -1,0 +1,14 @@
+<h2>Share Foto</h2>
+
+<%= form_for @foto, html: { multipart: true } do |form| %>
+<label>
+	Title:
+  <%= form.text_field :name, placeholder: 'Name' %>
+</label>
+  <br>
+  <label>
+  	Foto:
+  <%= form.file_field :image %>
+  </label>
+  <%= submit_tag 'Share!' %>
+<% end %>

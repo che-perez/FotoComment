@@ -8,6 +8,7 @@ class User < ApplicationRecord
 	validates :password, length: PASSWORD_LENGTH, allow_nil: true
 	
 	has_many :fotos
+	has_many :comments
 	
 	attr_reader :password
 	
@@ -23,6 +24,6 @@ class User < ApplicationRecord
 	
 	def password=(password)
 	  @password = password
-	  self.password_digest = BCeypt::Password.create(password)
+	  self.password_digest = BCrypt::Password.create(password)
 	end
 end

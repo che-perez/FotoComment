@@ -1,3 +1,4 @@
 class Comment < ApplicationRecord
-	belongs_to :foto, through: :user
+	belongs_to :user
+	belongs_to :foto
 end

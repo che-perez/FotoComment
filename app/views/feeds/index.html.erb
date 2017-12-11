@@ -1,0 +1,14 @@
+<h1>All Fotos!</h1>
+
+<% if @fotos.empty? %>
+  <h3>No Fotos Yet</h3>
+
+<% else %>
+  <div>
+    <% @fotos.each do |foto| %>
+      <div>
+	      <%= image_tag foto.image.url(:medium) %>
+	      </div>
+    <% end %>
+  </div>
+<% end %>

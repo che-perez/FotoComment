@@ -1,0 +1,15 @@
+<h2>Fotos Feed</h2>
+
+<% if @fotos.empty? %>
+  No Fotos
+
+<% else %>
+  <div>
+    <% @fotos.each do |foto| %>
+      <div>
+	      <%= image_tag foto.image.url(:medium) %>
+	      <%= link_to foto.name, foto_path(foto) %>
+	      </div>
+    <% end %>
+  </div>
+<% end %>
