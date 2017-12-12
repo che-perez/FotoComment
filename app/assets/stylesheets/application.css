@@ -16,6 +16,7 @@
  
  * {
 	 margin: 0 auto;
+	 font-family: helvetica;
  }
  
  .container{
@@ -23,6 +24,7 @@
 	 flex-direction: column;
 	 align-items: center;
 	 width: 100vw;
+	 height: 100vh;
 	 background-color: gray;
  }
  
@@ -31,8 +33,30 @@
 	 justify-content: flex-end;
 	 background-color: #134989;
 	 width: 100vw;
+	 height: 8vh;
  }
  
  .feed {
-	 background-color: fuchsia;
+	 display: flex;
+	 flex-direction: column;
+	 align-content: center;
+	 background-color: white;
+	 padding: 10px;
+	 width: 80vw;
+ }
+ 
+ img {
+	 margin: 10px;
+	 border: 5px solid #134989;
+ }
+ 
+ .nav a {
+	 color: black;
+	 text-decoration: none;
+	 font-size: 5vmin;
+ }
+ 
+ .nav a:hover {
+	 color: white;
+	 cursor: pointer;
  }
