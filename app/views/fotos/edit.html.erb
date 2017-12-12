@@ -2,10 +2,9 @@
 
 <%= form_for @foto do |form| %>
 
-  <%= label_tag :name %>
-
-  <b><%= @foto.name %></b>
-
-  <br>
-  <%= submit_tag 'Update monster!' %>
+<label>
+	Title:
+  <%= form.text_field :name, placeholder: 'Name' %>
+</label>
+  <%= submit_tag 'Update Foto!' %>
 <% end %>
