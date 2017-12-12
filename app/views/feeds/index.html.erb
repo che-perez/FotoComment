@@ -1,4 +1,4 @@
-<h1>All Fotos!</h1>
+<h1>Fotos Feed!</h1>
 
 <% if @fotos.empty? %>
   <h3>No Fotos Yet</h3>
@@ -7,8 +7,9 @@
   <div>
     <% @fotos.each do |foto| %>
       <div>
-	      <%= image_tag foto.image.url(:medium) %>
-	      </div>
+	    <h3><%= foto.name %></h3>
+	    <%= link_to (image_tag foto.image.url(:medium), class: 'foto'), foto %>
+	  </div>
     <% end %>
   </div>
 <% end %>

@@ -14,6 +14,7 @@
     <% if current_user %>
       <h1><%= current_user.username %></h1>
       <%= link_to 'Log out', session_path, method: :delete %>
+      <%= link_to 'Foto Feed', root_path %>
       <%= link_to 'New Foto', new_foto_path %>
       <%= link_to 'My Fotos', fotos_path %>
       <% else %>
