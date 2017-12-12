@@ -21,6 +21,10 @@ class FotosController < ApplicationController
   end
 
   def edit
+  	if @foto.user != current_user
+	flash[:notice] = "You can't edit other users Fotos!"
+	redirect_to root_path
+  	end
   end
 
   def update
@@ -43,10 +47,15 @@ class FotosController < ApplicationController
   end
 
   def destroy
+	if @foto.user != current_user
+		flash[:notice] = "You can't delete other users Fotos!"
+		redirect_to root_path
+	else
     @foto.destroy!
 
     flash[:notice] = "#{@foto.name} removed!"
     redirect_to "/fotos"
+    end
   end
 
   private
@@ -60,6 +69,6 @@ class FotosController < ApplicationController
   end
 
   def load_foto
-    @foto = current_user.fotos.find(params[:id])
+    @foto = Foto.find(params[:id])
   end
 end
