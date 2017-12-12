@@ -1,24 +1,17 @@
-# README
+# FotoComment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Ruby on Rails App to share and comments Fotos with friends.
 
-Things you may want to cover:
+Steps to take:
 
-* Ruby version
+* Fork and Clone
 
-* System dependencies
+* ```cd FotoComments ```
 
-* Configuration
+* ``` bundle install ```
 
-* Database creation
+* ``` rails server ```
 
-* Database initialization
+* Go to localhost:3000
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Start sharing and commenting...
