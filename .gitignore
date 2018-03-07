@@ -19,5 +19,6 @@
 .byebug_history
 
 /public/system/fotos
+/storage/
 
 .DS_Store
