@@ -16,39 +16,27 @@
 
 <body>
   <nav class="navbar navbar-expanded-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
       <a class="navbar-brand" href="/">FotoComment</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarResponsive">
-    <ul class="navbar-nav ml-auto">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="navbar-nav">
     <% if current_user %>
-      <li class="nav-item active">
-      <%= link_to "Foto Feed", root_path, :class => "nav-link" %>
+      <%= link_to "Foto Feed", root_path, :class => "nav-item nav-link active" %>
       <span class="sr-only">(current)</span>
-      </li>
-      <li class="nav-item">
-      <%= link_to "New Foto", new_foto_path, :class => "nav-link" %>
-      </li>
-      <li class="nav-item">
-      <%= link_to "My Fotos", fotos_path, :class => "nav-link" %>
-      </li>
-      <li class="nav-item">
-      <%= link_to "Log out", session_path, :class => "nav-link", method: :delete %>
-      </li>
+      <%= link_to "New Foto", new_foto_path, :class => "nav-item nav-link" %>
+
+      <%= link_to "My Fotos", fotos_path, :class => "nav-item nav-link" %>
+
+      <%= link_to "Log out", session_path, :class => "nav-item nav-link", method: :delete %>
       <% else %>
-      <li class="nav-item">
-      <%= link_to "Log in", new_session_path, :class => "nav-link" %>
-      </li>
-      <li class="nav-item">
-      <%= link_to "Create account", new_user_path, :class => "nav-link" %>
-      </li>
-      <li class="nav-item">
-      <%= link_to "Fotos Feed", root_path, :class => "nav-link" %>
-      </li>
+      <%= link_to "Log in", new_session_path, :class => "nav-item nav-link" %>
+
+      <%= link_to "Create account", new_user_path, :class => "nav-item nav-link" %>
+
+      <%= link_to "Fotos Feed", root_path, :class => "nav-item nav-link" %>
     <% end %>
-    </ul>
     </div>
     </div>
   </nav>

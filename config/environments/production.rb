@@ -78,6 +78,7 @@ Rails.application.configure do
 
 
   # Store files on Amazon S3.
+  config.require_master_key = true
   config.active_storage.service = :amazon
 
   # Use a different logger for distributed setups.
