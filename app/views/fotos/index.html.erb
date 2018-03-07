@@ -1,13 +1,13 @@
-<h2>Fotos Feed</h2>
+<h1 class="display-4">My Fotos</h1>
 
 <% if @fotos.empty? %>
   No Fotos
 
 <% else %>
-  <div>
+<div class="card-columns">
     <% @fotos.each do |foto| %>
-      <div>
-	    <%= link_to (image_tag foto.image.url(:medium), class: 'foto'), foto %>
+      <div class="card">
+	    <%= link_to (image_tag foto.image, class: "card-img-top"), foto %>
 	      </div>
     <% end %>
   </div>

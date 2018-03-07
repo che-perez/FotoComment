@@ -1,6 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
   <head>
+
+    <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
     <title>FotoComment</title>
     <%= csrf_meta_tags %>
 
@@ -9,38 +15,65 @@
   </head>
 
 <body>
-	<div class="container">
-	<div class="nav">
+  <nav class="navbar navbar-expanded-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">FotoComment</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
     <% if current_user %>
-      <h1><%= current_user.username %></h1>
-      <%= link_to 'Log out', session_path, method: :delete %>
-      <%= link_to 'Foto Feed', root_path %>
-      <%= link_to 'New Foto', new_foto_path %>
-      <%= link_to 'My Fotos', fotos_path %>
+      <li class="nav-item active">
+      <%= link_to "Foto Feed", root_path, :class => "nav-link" %>
+      <span class="sr-only">(current)</span>
+      </li>
+      <li class="nav-item">
+      <%= link_to "New Foto", new_foto_path, :class => "nav-link" %>
+      </li>
+      <li class="nav-item">
+      <%= link_to "My Fotos", fotos_path, :class => "nav-link" %>
+      </li>
+      <li class="nav-item">
+      <%= link_to "Log out", session_path, :class => "nav-link", method: :delete %>
+      </li>
       <% else %>
-      <%= link_to 'Log in', new_session_path %>
-      <%= link_to 'Create account', new_user_path %>
-      <%= link_to 'Fotos Feed', root_path %>
+      <li class="nav-item">
+      <%= link_to "Log in", new_session_path, :class => "nav-link" %>
+      </li>
+      <li class="nav-item">
+      <%= link_to "Create account", new_user_path, :class => "nav-link" %>
+      </li>
+      <li class="nav-item">
+      <%= link_to "Fotos Feed", root_path, :class => "nav-link" %>
+      </li>
     <% end %>
-
-    <% if flash[:notice].present? %>
-      <div class="notice">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-
-    <% if flash[:error].present? %>
-      <div class="errors">
-        <b>Errors:</b>
-
-        <%= flash[:error] %>
-      </div>
-    <% end %>
-	</div>
+    </ul>
+    </div>
+    </div>
+  </nav>
 	
-	<div class="feed">
-    <%= yield %>
-	</div>
+  <div class="container">
+    <div class="row">
+    <div class="col-sm text-center">
+    <% if flash[:notice].present? %>
+    <div class="alert alert-warning" role="alert">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+  
+  <% if flash[:error].present? %>
+    <div class="alert alert-danger" role="alert">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+  <div class="card">
+  <div class="card-body">
+      <%= yield %>
+      </div>
+    </div>
+    </div>
+    </div>
 	</div>
 
   </body>

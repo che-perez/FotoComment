@@ -1,19 +1,17 @@
-<div class="foto">
-	<h1><%= @foto.name %></h1>
-	<%= image_tag @foto.image.url(:large) %>
-</div>
 
-<div class="comments">
-	<h2>Comments!</h2>
-	<ul>
+<div class="card-columns">
+<div class="card">
+<h1 class="display-4"<%= @foto.name %></h1>
+	<%= image_tag @foto.image, class: "card-img-top" %>
+<div class="card-body">
+	<h5 class="cards-title">Comments!</h5>
 		<% @comments.each do |comm| %>
-		<p><%= comm.user.username %></p>
-			<li><%= comm.comment %></li>
+		<p class="card-text"><%= comm.user.username %>: <%= comm.comment %></p>
 			<% end %>
-	</ul>
-</div>
-<div class="links">
+
 <%= link_to 'New Comment', new_foto_comment_path(@foto) %>
 <%= link_to 'Delete Foto', foto_path(@foto), method: :delete %>
 <%= link_to 'Edit Foto', edit_foto_path(@foto) %>
+</div>
+</div>
 </div>

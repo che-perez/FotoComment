@@ -1,6 +1,6 @@
 <h2>Share Foto</h2>
 
-<%= form_for @foto, html: { multipart: true } do |form| %>
+<%= form_with(model: @foto, local: true) do |form| %>
 <label>
 	Title:
   <%= form.text_field :name, placeholder: 'Name' %>
