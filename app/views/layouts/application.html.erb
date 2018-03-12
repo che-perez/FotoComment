@@ -31,9 +31,9 @@
 
       <%= link_to "Log out", session_path, :class => "nav-item nav-link", method: :delete %>
       <% else %>
-      <%= link_to "Log in", new_session_path, :class => "nav-item nav-link" %>
+      <%= link_to "Log in", new_user_session_path, :class => "nav-item nav-link" %>
 
-      <%= link_to "Create account", new_user_path, :class => "nav-item nav-link" %>
+      <%= link_to "Create account", new_user_registration_path, :class => "nav-item nav-link" %>
 
       <%= link_to "Fotos Feed", root_path, :class => "nav-item nav-link" %>
     <% end %>
@@ -44,17 +44,8 @@
   <div class="container">
     <div class="row">
     <div class="col-sm text-center">
-    <% if flash[:notice].present? %>
-    <div class="alert alert-warning" role="alert">
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
-  
-  <% if flash[:error].present? %>
-    <div class="alert alert-danger" role="alert">
-      <%= flash[:error] %>
-    </div>
-  <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   <div class="card">
   <div class="card-body">
       <%= yield %>

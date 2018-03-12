@@ -6,7 +6,7 @@
 <div class="card-body">
 	<h5 class="cards-title">Comments!</h5>
 		<% @comments.each do |comm| %>
-		<p class="card-text"><%= comm.user.username %>: <%= comm.comment %></p>
+		<p class="card-text"><%= comm.user.email %>: <%= comm.comment %></p>
 			<% end %>
 
 <%= link_to 'New Comment', new_foto_comment_path(@foto) %>

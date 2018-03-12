@@ -1,9 +1,8 @@
 class CommentsController < ApplicationController
 	
-		
-	before_action :ensure_signed_in
 	before_action :load_comment, only: [:show, :edit, :update, :destroy]
-	before_action :set_foto
+  before_action :set_foto
+  before_action :authenticate_user!
 
   def new
     @comment = Comment.new

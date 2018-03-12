@@ -1,14 +1,13 @@
 class FotosController < ApplicationController
-	
-	before_action :ensure_signed_in
+  
 	before_action :load_foto, only: [:show, :edit, :update, :destroy]
 
   def new
-    @foto = Foto.new
+    @foto = current_user.fotos.build
   end
 
   def create
-    @foto = Foto.new(create_params)
+    @foto = current_user.fotos.build(create_params)
     @foto.user = current_user
 
     if @foto.save
